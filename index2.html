@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <audio controls autoplay loop>
+      <source src="love.mp3" type="audio/mpeg">
+    </audio>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Ied ra!</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #000, #000);
+            font-family: 'Montserrat', sans-serif;
+            color: #fff;
+        }
+
+        #lyrics {
+            font-size: 1em;
+            font-weight: 400;
+            white-space: pre-wrap;
+            word-break: break-word;
+            color: #fff;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .fade-in {
+            animation: fadeIn 3s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="lyrics-container">
+        <p id="lyrics"></p>
+    </div>
+    <script>
+        const lyricsText = `Happy Ied Mubarak Ra!\naku minta maaf ya kalo aku bikin kesel kamu bikin marah,sedih dll ke kamu yang nyakitin diri kamu, aku bener bener ga bermaksud ra suerrr dehh.\nMakasi juga ya udah jadi temen aku selama 2 setengah tahun ini eh apa tiga...lupa...\nPokoknya makasi ya udah baik sama aku, jujur aku gatau ntar gimana ini cuma yaudala.\nMaafin aku yang ceplas ceplos ini ya dalam perbuatan/perkataan maafin aku kalo aku terlalu over excited, makasi araa!!\nBTW GUA GATAU INI MINDAHIN LAGUNYA GIMANA BINUN BANGET JADI JELEK ANYING`;
+
+        const lyricsElement = document.getElementById('lyrics');
+        let index = 0;
+
+        function typeWriter() {
+            if (index < lyricsText.length) {
+                if (lyricsText[index] === '\n') {
+                    lyricsElement.innerHTML += '<br>';
+                } else {
+                    lyricsElement.innerHTML += lyricsText[index];
+                }
+                index++;
+                setTimeout(typeWriter, 68);
+            } else {
+                lyricsElement.classList.add('fade-in');
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', typeWriter);
+    </script>
+      <!-- Button -->
+  <div style="position: absolute; top: 90vh; width: 100%; display: flex; justify-content: center;">
+    <a href="flower.html" class="btn">
+      <svg height="24" width="24" fill="#FFFFFF" viewBox="0 0 24 24" data-name="Layer 1" id="Layer_1" class="sparkle">
+        <path
+          d="M10,21.236,6.755,14.745.264,11.5,6.755,8.255,10,1.764l3.245,6.491L19.736,11.5l-6.491,3.245ZM18,21l1.5,3L21,21l3-1.5L21,18l-1.5-3L18,18l-3,1.5ZM19.333,4.667,20.5,7l1.167-2.333L24,3.5,21.667,2.333,20.5,0,19.333,2.333,17,3.5Z">
+        </path>
+      </svg>
+
+      <span class="text">Open</span>
+    </a>
+  </div>
+</body>
+
+</html>
